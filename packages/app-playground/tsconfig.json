@@ -1,0 +1,11 @@
+{
+  "extends": "@tallii/tsconfig/vite-app.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@rtkwlf/web-button": ["../../packages/design-system/web-button"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "vite.config.js"],
+  "exclude": ["node_modules"]
+}

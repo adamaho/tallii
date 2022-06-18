@@ -1,0 +1,27 @@
+{
+  "name": "@tallii/app-playground",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "@tallii/web-css": "workspace:*",
+    "@tallii/web-button": "workspace:*",
+    "@vanilla-extract/css": "1.6.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@tallii/config": "workspace:*",
+    "@tallii/tsconfig": "workspace:*",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vanilla-extract/vite-plugin": "3.1.2",
+    "@vitejs/plugin-react": "^1.0.7",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2"
+  }
+}

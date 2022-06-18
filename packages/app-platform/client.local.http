@@ -1,0 +1,54 @@
+@access_token = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1cm46YXVkaWVuY2U6dGVzdCIsImlzcyI6InVybjppc3N1ZXI6dGVzdCIsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VybmFtZSI6ImFkYW1haG8iLCJlbWFpbCI6ImFkYW1haG9AcHJpc21hLmlvIn0sImlhdCI6MTY0NTY2MDUwOCwiZXhwIjoxNjQ1Njc0OTA4fQ.KQOr5ojY2sD5HtVcZx2Hdz_t1VOqSR4C_pYWI_NW2c4WkCmiS-5Vrg-0W3p05g1Ey2xgCdDDgbPQlK3vt2a2jQ
+@refresh_token = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1cm46YXVkaWVuY2U6dGVzdCIsImlzcyI6InVybjppc3N1ZXI6dGVzdCIsImlhdCI6MTY0NTY2MDUwOCwiZXhwIjoxNjc3MTk2NTA4fQ.1Iuh177F-PcK44LNS5JZfHVVx4w7keTgs4E37HDeWPdnMa9hG9hfEPWoVZlWiRcJakw12dEXQiyBbTtJn_BNYQ
+
+POST http://localhost:3000/auth/signup.json HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aqsqqs",
+    "email": "adamaho@prisma.io",
+    "password": "brazil"
+}
+
+###
+
+POST http://localhost:3000/auth/login.json HTTP/1.1
+content-type: application/json
+
+{
+    "email": "adamaho@prisma.io",
+    "password": "brazil"
+}
+
+###
+
+POST http://localhost:3000/auth/logout HTTP/1.1
+Authorization: Bearer {{ access_token }}
+content-type: application/json
+
+{
+    "refresh_token": "{{refresh_token}}"
+}
+
+
+###
+
+POST http://localhost:3000/auth/refresh.json HTTP/1.1
+content-type: application/json
+
+{
+    "refresh_token": "{{ refresh_token }}",
+    "access_token": "{{ access_token }}"
+}
+
+###
+
+GET http://localhost:3000/me/matches.json HTTP/1.1
+Authorization: Bearer {{ access_token }}
+content-type: application/json
+
+###
+
+GET http://localhost:3000/matches/2.json HTTP/1.1
+Authorization: Bearer {{ access_token }}
+content-type: application/json

@@ -1,0 +1,28 @@
+{
+  "name": "tallii",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "dev:ds": "turbo run dev --parallel --scope='@tallii/app-playground' --scope='@tallii/web-*'",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean --parallel && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@6.30.1"
+}

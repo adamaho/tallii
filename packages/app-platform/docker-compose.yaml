@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  database:
+    image: postgres:12
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=tallii-platform-db
+    ports:
+      - 5001:5432
+    deploy:
+      resources:
+        limits:
+          memory: '512M'
+          cpus: '1'
+    command: ["postgres", "-c", "log_statement=all"]
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+
+volumes:
+  database-data:

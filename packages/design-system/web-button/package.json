@@ -1,0 +1,44 @@
+{
+  "name": "@tallii/web-button",
+  "version": "0.0.1",
+  "description": "a react web button",
+  "main": "./src/index.ts",
+  "typings": "./src/index.ts",
+  "author": "adamaho",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "files": [
+    "src/button.css.ts",
+    "src/button.tsx",
+    "src/index.ts"
+  ],
+  "scripts": {
+    "build": "yarn build:types && yarn build:js",
+    "build:js": "vite build",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@tallii/config": "workspace:*",
+    "@tallii/tsconfig": "workspace:*",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@vanilla-extract/vite-plugin": "3.1.2",
+    "typescript": "^4.5.3",
+    "vite": "^2.7.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "@tallii/web-css": "workspace:*",
+    "@vanilla-extract/css": "1.6.8",
+    "@vanilla-extract/sprinkles": "1.3.3",
+    "clsx": "^1.1.1"
+  }
+}
